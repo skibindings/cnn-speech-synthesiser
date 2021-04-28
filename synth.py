@@ -112,7 +112,7 @@ def synthesize():
         for i, mag in enumerate(Z):
             print("Working on file", i+1)
             wav = spectrogram2wav(mag,model)
-            write("/{}.wav".format(sys.argv[1]), hp.sr, wav)
+            write("/{}.wav".format("generated_sample"), hp.sr, wav)
 
 if __name__ == '__main__':
     synthesize()
