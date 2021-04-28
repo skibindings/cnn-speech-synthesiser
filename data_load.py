@@ -75,8 +75,8 @@ def load_data(mode="train"):
 
 def process_synth_text(text):
     char2idx = load_vocab()
-
-    lines = ["1. "+text]
+    text_num = "1. "+text;
+    lines = [text_num]
     sents = [text_normalize(line.split(" ", 1)[-1]).strip() + "E" for line in lines]  # text normalization, E: EOS
     texts = np.zeros((len(sents), hp.max_N), np.int32)
     for i, sent in enumerate(sents):
