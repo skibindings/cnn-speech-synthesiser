@@ -77,7 +77,7 @@ def process_synth_text(text):
     char2idx, idx2char = load_vocab()
     lines = [text+"E"]
     texts = np.zeros((len(lines), hp.max_N), np.int32)
-    for i, sent in lines:
+    for i, sent in enumerate(lines):
         texts[i, :len(sent)] = [char2idx[char] for char in sent]
     return texts
 
